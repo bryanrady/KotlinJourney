@@ -1,7 +1,7 @@
 package com.bryanrady.lib_network.factory
 
-import com.bryanrady.lib_network.errorhandler.ErrorHandler
 import com.bryanrady.lib_network.errorhandler.ErrorHandlerFlowable
+import com.bryanrady.lib_network.errorhandler.ErrorHandlerObservable
 import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -46,9 +46,9 @@ class CustomRxJava2CallAdapterFactory private constructor(
                         val observable = t.subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
                         if (mFunction != null) {
-                            observable.map(mFunction).onErrorResumeNext(ErrorHandler())
+                            observable.map(mFunction).onErrorResumeNext(ErrorHandlerObservable())
                         } else {
-                            observable.onErrorResumeNext(ErrorHandler())
+                            observable.onErrorResumeNext(ErrorHandlerObservable())
                         }
                     });
             } else if (rawType == Flowable::class.java) {

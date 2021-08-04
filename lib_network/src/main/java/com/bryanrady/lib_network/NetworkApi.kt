@@ -3,13 +3,11 @@ package com.bryanrady.lib_network
 import com.bryanrady.lib_network.factory.CustomRxJava2CallAdapterFactory
 import com.bryanrady.lib_network.interceptor.CommonRequestInterceptor
 import com.bryanrady.lib_network.interceptor.CommonResponseInterceptor
-import com.bryanrady.lib_network.interceptor.LoggerInterceptor
 import io.reactivex.functions.Function
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -38,7 +36,7 @@ abstract class NetworkApi {
 
     }
 
-    private val mBaseUrl: String = "https://............"
+    private val mBaseUrl: String = "http://v.juhe.cn/toutiao/"
 
     private var mOkHttpClient: OkHttpClient? = null
 
@@ -75,7 +73,6 @@ abstract class NetworkApi {
             //// TODO: 2021/7/18  不用域名的请求头 可能不一样，所以这里的设置还需要职责划分的更明显才行
             builder.addInterceptor(CommonRequestInterceptor())
             builder.addInterceptor(CommonResponseInterceptor())
-            builder.addInterceptor(LoggerInterceptor())
 
             if (mNetworkRequiredInfo.isDebug()) {
                 val loggingInterceptor = HttpLoggingInterceptor()

@@ -23,7 +23,7 @@ abstract class BaseActivity<V : IBaseView, P : BasePresenter<V>> : AppCompatActi
 
         if (needPresenter()) {
             mPresenter = ReflectUtils.getT(this, 0) as P
-            mPresenter!!.attach(this as V);
+            mPresenter!!.attach(this as V)
         }
 
     }

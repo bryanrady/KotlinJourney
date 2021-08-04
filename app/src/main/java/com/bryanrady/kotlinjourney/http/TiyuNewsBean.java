@@ -1,4 +1,4 @@
-package com.bryanrady.lib_network.module;
+package com.bryanrady.kotlinjourney.http;
 
 import java.io.Serializable;
 
