@@ -53,7 +53,7 @@ public class TestNetworkActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    protected void onFail(int code, @org.jetbrains.annotations.Nullable String errMsg) {
+                    protected void onFail(int code, String errMsg) {
                         Log.e("wangqingbin", "响应失败");
                     }
 

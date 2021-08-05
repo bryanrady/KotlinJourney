@@ -23,7 +23,7 @@ abstract class BaseObserver<T> : Observer<BaseResponse<T>> {
         val result = t.getResult()
         if (result != null) {
             val data = result.getData()
-            onSuccess(data!!)
+            onSuccess(data)
             return
         }
         throw NullPointerException("service return data is error")
@@ -46,8 +46,8 @@ abstract class BaseObserver<T> : Observer<BaseResponse<T>> {
         }
     }
 
-    protected abstract fun onSuccess(data: T)
+    protected abstract fun onSuccess(data: T?)
 
-    protected abstract fun onFail(code: Int, errMsg: String?)
+    protected abstract fun onFail(code: Int, errMsg: String)
 
 }

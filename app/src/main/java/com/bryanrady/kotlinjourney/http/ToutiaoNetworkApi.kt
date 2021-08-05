@@ -19,7 +19,7 @@ class ToutiaoNetworkApi private constructor() : NetworkApi() {
      */
     companion object {
 
-        val instance: ToutiaoNetworkApi by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+        private val instance: ToutiaoNetworkApi by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
             ToutiaoNetworkApi()
         }
 

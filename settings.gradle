@@ -1,4 +1,4 @@
+include ':lib_kt_base'
 include ':lib_network'
 rootProject.name='KotlinJourney'
 include ':app'
-include ':kotlinbase'

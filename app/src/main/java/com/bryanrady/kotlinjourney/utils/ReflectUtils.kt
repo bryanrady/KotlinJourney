@@ -12,8 +12,8 @@ object ReflectUtils {
 
     fun <T> getT(o: Any?, index: Int): T {
         val genericSuperclass: ParameterizedType = o!!::class.java.genericSuperclass as ParameterizedType
-        val clazz = genericSuperclass.actualTypeArguments[index] as Class<*>
-        return clazz.newInstance() as T
+        val clazz = genericSuperclass.actualTypeArguments[index] as Class<T>
+        return clazz.newInstance()
     }
 
 }

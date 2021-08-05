@@ -70,7 +70,6 @@ abstract class NetworkApi {
                 }
             }
             //// TODO: 2021/7/18  不用域名的请求头 可能不一样，所以这里的设置还需要职责划分的更明显才行
-            //// TODO: 2021/7/18  不用域名的请求头 可能不一样，所以这里的设置还需要职责划分的更明显才行
             builder.addInterceptor(CommonRequestInterceptor())
             builder.addInterceptor(CommonResponseInterceptor())
 
